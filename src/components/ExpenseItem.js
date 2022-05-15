@@ -1,10 +1,16 @@
-function ExpenseItem() {
+import './ExpenseItem.css';
+
+function ExpenseItem(props) {
+	const expenseDate = new Date(2022, 4, 15)
+	const expenseTitle = 'House Rent';
+	const expenseAmount = 500.99;
+
   return ( 
-    <div>
-      <div>15 March 2022</div>
-      <div>
-        <h2>House Rent</h2>
-        <div>$500.50</div>
+    <div className='expense-item'>
+      <div>{expenseDate.toISOString()}</div>
+      <div className='expense-item__description'>
+        <h2>{expenseTitle}</h2>
+        <div className='expense-item__price'>${expenseAmount}</div>
       </div>
     </div> 
 	);
